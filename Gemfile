@@ -26,9 +26,9 @@ group :development, :test do
   gem 'rails-controller-testing'
 end
 
-group :test do
-  gem 'nyan-cat-formatter'
-end
+#group :test do
+#  gem 'nyan-cat-formatter'
+#end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
