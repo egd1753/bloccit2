@@ -25,3 +25,22 @@ end
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+
+
+Advertisement.create!(
+  title: "Find favorite books, like ",
+  copy: "Tales of a Woeful Platypus",
+  price: 15
+)
+
+Advertisement.create!(
+  title: "Upcoming event: ",
+  copy: "Alligator Monday, a favorite annual event, is coming right up",
+  price: "8"
+)
+
+Advertisement.create!(
+  title: "Flowers on sale",
+  copy: "Spring clearance on flowers like Didiwompus and Pooninnies",
+  price: 82
+)
