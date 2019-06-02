@@ -22,6 +22,7 @@ RSpec.describe PostsController, type: :controller do
       get :show, params: { id: my_post.id }
       expect(response).to have_http_status(:success)
     end
+
     it "renders the #show view" do
       get :show, params: { id: my_post.id }
       expect(response).to render_template :show
@@ -32,6 +33,7 @@ RSpec.describe PostsController, type: :controller do
       expect(assigns(:post)).to eq(my_post)
     end
   end
+
 
   describe "GET new" do
     it "returns http success" do
@@ -49,6 +51,7 @@ RSpec.describe PostsController, type: :controller do
       expect(assigns(:post)).not_to be_nil
     end
   end
+
 
   describe "POST create" do
     it "increases the number of Post by 1" do
@@ -107,17 +110,18 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "DELETE destroy" do
-  it "deletes the post" do
-    delete :destroy, params: { id: my_post.id }
-    count = Post.where({id: my_post.id}).size
-    expect(count).to eq 0
-  end
 
-  it "redirects to posts index" do
-    delete :destroy, params: { id: my_post.id }
-    expect(response).to redirect_to posts_path
+  describe "DELETE destroy" do
+    it "deletes the post" do
+      delete :destroy, params: { id: my_post.id }
+      count = Post.where({id: my_post.id}).size
+      expect(count).to eq 0
+    end
+
+    it "redirects to posts index" do
+      delete :destroy, params: { id: my_post.id }
+      expect(response).to redirect_to posts_path
+    end
   end
-end
 
 end

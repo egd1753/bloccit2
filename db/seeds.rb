@@ -25,3 +25,23 @@ end
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+
+Question.create!(
+  title: "Random Question Title",
+  body: "Random question body",
+  resolved: false
+)
+
+Question.create!(
+  title: "Another random Question Title",
+  body: "Another random question body",
+  resolved: false
+)
+
+Question.create!(
+  title: "Last random Question Title",
+  body: "Last random question body",
+  resolved: false
+)
+
+puts "#{Question.count} questions created"
