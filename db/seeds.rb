@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'random_data'
 
+
 15.times do
   Topic.create!(
     name:         RandomData.random_sentence,
@@ -31,7 +32,18 @@ posts = Post.all
   )
 end
 
+3.times do
+  SponsoredPost.create!(
+    topic:      topics.sample,
+    title:      "(sponsored post)",
+    body:       RandomData.random_paragraph,
+    price:      3
+  )
+end
+
+
 puts "Seed finished"
 puts "#{Topic.count} topics created"
+puts "#{SponsoredPost.count} sponsored posts created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
