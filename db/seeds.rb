@@ -27,12 +27,13 @@ puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 
 Post.find_or_create_by!(
-  title: "This is a unique title",
-  body: "This is a unique body"
+  title: "This is a unique post title",
+  body: "This is a unique post body"
 )
 
-Comment.find_or_create_by!(
-  post: posts.title."This is a unique title",
+Comment.where(
+  post: "This is a unique post title"
+).find_or_create_by(
   body: "This is a unique comment body"
 )
 
