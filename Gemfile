@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
+  gem 'shoulda-context'
   gem 'shoulda'
   gem 'nyan-cat-formatter'
 end
@@ -50,3 +51,6 @@ group :development do
 end
 
 gem 'bootstrap-sass'
+
+# Used for encrypting passwords
+gem 'bcrypt'
