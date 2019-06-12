@@ -24,9 +24,11 @@ RSpec.describe User, type: :model do
 
     it "should format the user's name" do
       user.name = "bud studdard"
+      user.save!
       expect(user.name).to eq "Bud Studdard"
     end
   end
+
 
 
   describe "invalid user" do
