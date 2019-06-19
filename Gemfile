@@ -54,3 +54,6 @@ gem 'bootstrap-sass'
 
 # Used for encrypting passwords
 gem 'bcrypt'
+
+# Figaro, allows sensative credentials to be safely stored/accessed
+gem 'figaro', '1.0'
