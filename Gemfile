@@ -28,6 +28,7 @@ group :development, :test do
   gem 'shoulda-context'
   gem 'shoulda'
   gem 'nyan-cat-formatter'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 # Use Puma as the app server
