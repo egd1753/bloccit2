@@ -8,6 +8,7 @@
           <%= image_tag avatar_url, class: 'media-object' %>
         </div>
       <% end %>
+
       <div class="media-body">
         <h2 class="media-heading"><%= @user.name %></h2>
         <small>
@@ -16,11 +17,39 @@
         </small>
       </div>
     </div>
+
+    <div class="media">
+      <div class="media-body">
+        <h2 class="media-heading">Posts</h2>
+        <%= render @user.posts %>
+        <%= user_posts(current_user) %>
+      </div>
+    </div>
+
+    <h2>Favorite Posts</h2>
+    <div class="media">
+      <% @user.all_favorite_posts.each do |post| %>
+        <% user_avatar = author_gravatar(post.user) %>
+        <% if user_avatar %>
+          <div class="media-left">
+            <%= image_tag user_avatar, class: 'media-object' %>
+          </div>
+        <% end %>
+        <div class="media-body">
+          <%= render post %>
+        </div>
+        <br />
+      <% end %>
+      <%= user_favorites(current_user) %>
+    </div>
+
+    <div class="media"
+      <div class="media-body">
+        <h2 class="media-heading">Comments</h2>
+          <%= render @user.comments %>
+          <%= user_comments(current_user) %>
+      </div>
+    </div>
+
   </div>
 </div>
-
-<h2>Posts</h2>
-<%= render @user.posts %>
-
-<h2>Comments</h2>
-<%= render @user.comments %>

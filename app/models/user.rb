@@ -19,13 +19,24 @@ class User < ApplicationRecord
 
   enum role: [:member, :admin]
 
+
   def favorite_for(post)
     favorites.where(post_id: post.id).first
   end
 
+
+  def all_favorite_posts
+    favorited_posts = []
+    favorites.where(user_id: id).each do |favorite|
+      favorited_posts.push(favorite.post)
+    end
+    return favorited_posts
+  end
+
+
   def avatar_url(size)
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
-  end  
+  end
 
 end
